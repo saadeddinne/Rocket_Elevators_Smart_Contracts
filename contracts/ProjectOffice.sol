@@ -47,7 +47,7 @@ contract ProjectOffice {
         items.push(order);
     }
 
-    // Get items with minimum gaz !
+    // Get order with minimum gaz !
     function getOrder() public view returns (Items[] memory) {
         return items;
     }

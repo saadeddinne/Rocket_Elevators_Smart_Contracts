@@ -20,7 +20,7 @@ contract("ProjectOffice", async (accounts) => {
 
 	describe("Test create Order", async () => {
 		it("Checking the returned value of items", async function () {
-			var expected = [8, 1, 40, 96, 8];
+			var expected = [8, 1, 80, 56, 8, 16];
 			var createOrder = await projectOffice.createOrder(1, 2, 8, 5);
 			var getOrder = await projectOffice.getOrder();
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 class SetCage extends React.Component {
-  state = { addressId: null };
+  state = { cageId: null };
 
   handleKeyDown = a => {
     // if the enter key is pressed, set the value with the string
@@ -15,20 +15,20 @@ class SetCage extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const addressId = contract.methods["cageSet"].cacheSend(value, {
+    const cageId = contract.methods["cageSet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `addressId` for later reference
-    this.setState({ addressId });
+    // save the `cageId` for later reference
+    this.setState({ cageId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `addressId`
-    const txHash = transactionStack[this.state.addressId];
+    // get the transaction hash using our saved `cageId`
+    const txHash = transactionStack[this.state.cageId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -40,7 +40,7 @@ class SetCage extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" onKeyDown={this.handleKeyDown} />
+        <input type="number" onKeyDown={this.handleKeyDown} />
         <div>{this.getTxStatus()}</div>
       </div>
     );

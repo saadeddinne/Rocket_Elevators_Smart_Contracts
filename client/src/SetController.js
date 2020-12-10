@@ -40,7 +40,7 @@ class SetController extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" onKeyDown={this.handleKeyDown} />
+        <input type="number" onKeyDown={this.handleKeyDown} />
         <div>{this.getTxStatus()}</div>
       </div>
     );

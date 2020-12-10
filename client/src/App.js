@@ -61,12 +61,12 @@ class App extends Component {
 			<body>
 				<nav class="navbar navbar-expand-sm bg-dark navbar-dark lg">
 					<a class="navbar-brand" href="#">
-						<h3>ROCKET ELEVATORS</h3>
+						<h1 class="display-3">ROCKET ELEVATORS</h1>
 					</a>
 				</nav>
 				<div class="container">
 					<div class="page-header">
-						<h1>POST OFFICE</h1>
+						<h1 class="display-2">PROJECT OFFICE</h1>
 					</div>
 					<div class="mb-5">
 						<h4>

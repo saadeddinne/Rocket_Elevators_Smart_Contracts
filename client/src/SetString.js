@@ -127,11 +127,18 @@ class SetString extends React.Component {
 					></input>
 				</div>
 
-				<input
+				{/* <input
 					class="btn btn-primary btn-xl"
 					type="submit"
 					onClick={this.buttonClick}
-				/>
+				/> */}
+				<button
+					type="submit"
+					onClick={this.buttonClick}
+					class="btn btn-primary btn-lg"
+				>
+					SEND ORDER
+				</button>
 				<div>{this.getTxStatus()}</div>
 			</div>
 		);

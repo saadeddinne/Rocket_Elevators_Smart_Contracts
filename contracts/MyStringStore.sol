@@ -2,14 +2,12 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract MyStringStore {
-    // difficile de changer son type a changer
-    string public Display = "---Displays needed---";
-
-    uint256 public Controller;
-    uint256 public Cage;
-    uint256 public Motor;
-    uint256 public Door;
-    uint256 public Button;
+    uint256 public Display = 0;
+    uint256 public Controller = 0;
+    uint256 public Cage = 0;
+    uint256 public Motor = 0;
+    uint256 public Door = 0;
+    uint256 public Button = 0;
 
     function motorSet(uint256 b) public {
         Motor = b;
@@ -31,7 +29,7 @@ contract MyStringStore {
         Button = e;
     }
 
-    function displaySet(string memory f) public {
+    function displaySet(uint256 f) public {
         Display = f;
     }
 }

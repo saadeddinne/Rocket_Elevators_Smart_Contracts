@@ -1,12 +1,12 @@
 import React from "react";
 
-class SetButton extends React.Component {
-	state = { buttonId: null };
+class SetLcd extends React.Component {
+	state = { lcdId: null };
 
-	handleKeyDown = (e) => {
+	handleKeyDown = (b) => {
 		// if the enter key is pressed, set the value with the string
-		if (e.keyCode === 13) {
-			this.setValue1(e.target.value);
+		if (b.keyCode === 13) {
+			this.setValue1(b.target.value);
 		}
 	};
 
@@ -15,20 +15,20 @@ class SetButton extends React.Component {
 		const contract = drizzle.contracts.MyStringStore;
 
 		// let drizzle know we want to call the `set` method with `value`
-		const buttonId = contract.methods["buttonSet"].cacheSend(value, {
+		const lcdId = contract.methods["lcdSet"].cacheSend(value, {
 			from: drizzleState.accounts[0],
 		});
 
-		// save the `buttonId` for later reference
-		this.setState({ buttonId });
+		// save the `motorId` for later reference
+		this.setState({ lcdId });
 	};
 
 	getTxStatus = () => {
 		// get the transaction states from the drizzle state
 		const { transactions, transactionStack } = this.props.drizzleState;
 
-		// get the transaction hash using our saved `buttonId`
-		const txHash = transactionStack[this.state.buttonId];
+		// get the transaction hash using our saved `motorId`
+		const txHash = transactionStack[this.state.motorId];
 
 		// if transaction hash does not exist, don't display anything
 		if (!txHash) return null;
@@ -49,4 +49,4 @@ class SetButton extends React.Component {
 	}
 }
 
-export default SetButton;
+export default SetLcd;

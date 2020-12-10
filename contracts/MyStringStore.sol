@@ -2,39 +2,36 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract MyStringStore {
-  string public Controller = "---Controllers needed---";
-  string public Cage = "---Cages needed---";
-  string public Motor = "---Motors needed---";
-  // string public myString = "---Service Level---";
-  string public Door = "---Doors needed---";
-  string public Button = "---Buttons needed---";
-  string public Display = "---Displays needed---";
+    // difficile de changer son type a changer
+    string public Display = "---Displays needed---";
 
-  // function set(string memory x) public {
-  //   myString = x;
-  // }
+    uint256 public Controller;
+    uint256 public Cage;
+    uint256 public Motor;
+    uint256 public Door;
+    uint256 public Button;
 
-  function motorSet(string memory b) public {
-    Motor = b;
-  }
+    function motorSet(uint256 b) public {
+        Motor = b;
+    }
 
-  function cageSet(string memory a) public {
-    Cage = a;
-  }
+    function cageSet(uint256 a) public {
+        Cage = a;
+    }
 
-  function controllerSet(string memory c) public {
-    Controller = c;
-  }
+    function controllerSet(uint256 c) public {
+        Controller = c;
+    }
 
-  function doorSet(string memory d) public {
-    Door = d;
-  }
+    function doorSet(uint256 d) public {
+        Door = d;
+    }
 
-  function buttonSet(string memory e) public {
-    Button = e;
-  }
+    function buttonSet(uint256 e) public {
+        Button = e;
+    }
 
-  function displaySet(string memory f) public {
-    Display = f;
-  }
+    function displaySet(string memory f) public {
+        Display = f;
+    }
 }

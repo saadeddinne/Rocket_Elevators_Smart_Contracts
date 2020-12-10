@@ -15,8 +15,9 @@
 			rel="stylesheet"
 			id="bootstrap-css"
 		/>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -31,7 +32,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-		<title>ROcket Elevators</title>
+		<title>Rocket Elevators</title>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
@@ -46,117 +47,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="panel-group" id="accordion">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a
-										data-toggle="collapse"
-										data-parent="#accordion"
-										href="#collapseOne"
-										><span class="glyphicon glyphicon-file"> </span>NEW ORDER</a
-									>
-								</h4>
-							</div>
-							<div id="collapseOne" class="panel-collapse collapse in">
-								<div class="panel-body">
-									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<input
-													type="number"
-													class="form-control"
-													placeholder="Number of Elevators"
-													required
-												/>
-											</div>
-											<div class="form-group">
-												<input
-													type="number"
-													class="form-control"
-													placeholder="Number of controllers"
-													required
-												/>
-											</div>
-											<div class="form-group">
-												<input
-													type="number"
-													class="form-control"
-													placeholder="Number of Doors"
-													required
-												/>
-											</div>
-											<div class="form-group">
-												<input
-													type="number"
-													class="form-control"
-													placeholder="Number of buttons"
-													required
-												/>
-											</div>
-											<div class="form-group">
-												<input
-													type="number"
-													class="form-control"
-													placeholder="Number of Displays"
-													required
-												/>
-											</div>
-											<div class="form-group">
-												<a href="#" class="btn btn-success btn-sm"
-													><span class="glyphicon glyphicon-floppy-disk"> </span
-													>Create Order</a
-												>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a
-										data-toggle="collapse"
-										data-parent="#accordion"
-										href="#collapseTwo"
-										><span class="glyphicon glyphicon-th-list"> </span>DISPLAY
-										ORDER</a
-									>
-								</h4>
-							</div>
-							<div id="collapseTwo" class="panel-collapse collapse">
-								<div class="panel-body">
-									<div class="row">
-										<div class="col-md-12"></div>
-									</div>
-									<div class="row">
-										<div class="col-md-12">
-											<div class="well well-sm well-primary">
-												<form class="form form-inline" role="form">
-													<div class="form-group">
-														<a
-															href="http://www.jquery2dotnet.com"
-															class="btn btn-success btn-sm"
-															><span class="glyphicon glyphicon-floppy-disk">
-															</span
-															>Save</a
-														>
-													</div>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</body>
 </html>

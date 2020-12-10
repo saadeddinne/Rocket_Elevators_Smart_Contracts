@@ -1,6 +1,6 @@
 import React from "react";
 
-class ReadString extends React.Component {
+class ReadFloor extends React.Component {
   state = { dataKey: null };
 
   componentDidMount() {
@@ -8,7 +8,7 @@ class ReadString extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to watch the `myString` method
-    const dataKey = contract.methods["myString"].cacheCall();
+    const dataKey = contract.methods["nbFloor"].cacheCall();
 
     // save the `dataKey` to local component state for later reference
     this.setState({ dataKey });
@@ -19,11 +19,11 @@ class ReadString extends React.Component {
     const { MyStringStore } = this.props.drizzleState.contracts;
 
     // using the saved `dataKey`, get the variable we're interested in
-    const myString = MyStringStore.myString[this.state.dataKey];
+    const nbFloor = MyStringStore.nbFloor[this.state.dataKey];
 
     // if it exists, then we display its value
-    return (<p>Service level needed: {myString && myString.value}</p>);
+    return (<p>Displays needed : {nbFloor && nbFloor.value}</p>);
   }
 }
 
-export default ReadString;
+export default ReadFloor;

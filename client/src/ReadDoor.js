@@ -22,7 +22,12 @@ class ReadDoor extends React.Component {
 		const nbDoor = MyStringStore.Door[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p>Doors needed : {nbDoor && nbDoor.value}</p>;
+		return (
+			<row>
+				<div class="col-6">Doors needed : </div>{" "}
+				<div class="col-6">{nbDoor && nbDoor.value}</div>
+			</row>
+		);
 	}
 }
 

@@ -22,7 +22,12 @@ class ReadMotor extends React.Component {
 		const nbMotor = MyStringStore.Motor[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p>Motors needed : {nbMotor && nbMotor.value}</p>;
+		return (
+			<row>
+				<div class="col-6">Motors needed : </div>{" "}
+				<div class="col-6">{nbMotor && nbMotor.value}</div>
+			</row>
+		);
 	}
 }
 

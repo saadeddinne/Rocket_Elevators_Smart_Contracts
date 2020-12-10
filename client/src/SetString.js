@@ -61,26 +61,77 @@ class SetString extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<p>
-					Controllers needed : <input id="controller" type="number" />
-				</p>
-				<p>
-					Cages needed : <input id="cage" type="number" />
-				</p>
-				<p>
-					Motor needed : <input id="motor" type="number" />
-				</p>
-				<p>
-					Doors needed : <input id="door" type="number" />
-				</p>
-				<p>
-					Buttons needed : <input id="button" type="number" />
-				</p>
-				<p>
-					Displays needed : <input id="display" type="number" />
-				</p>
-				<input type="submit" onClick={this.buttonClick} />
+			<div class="container">
+				<div class="form-group">
+					<label for="email">Controllers needed :</label>
+
+					<input
+						type="number"
+						class="form-control"
+						placeholder="Enter number controllers"
+						id="controller"
+					></input>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Cages needed :</label>
+
+					<input
+						type="number"
+						class="form-control"
+						placeholder="Enter number cages"
+						id="cage"
+					></input>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Motor needed :</label>
+
+					<input
+						type="number"
+						class="form-control"
+						placeholder="Enter number motors"
+						id="motor"
+					></input>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Doors needed : </label>
+
+					<input
+						type="number"
+						class="form-control"
+						placeholder="Enter number doors"
+						id="door"
+					></input>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Buttons needed : </label>
+
+					<input
+						type="number"
+						class="form-control"
+						placeholder="Enter number buttons"
+						id="button"
+					></input>
+				</div>
+				<div class="form-group">
+					<label for="email">Displays needed : </label>
+
+					<input
+						type="number"
+						class="form-control"
+						placeholder="Enter number Displays"
+						id="display"
+					></input>
+				</div>
+
+				<input
+					class="btn btn-primary btn-xl"
+					type="submit"
+					onClick={this.buttonClick}
+				/>
 				<div>{this.getTxStatus()}</div>
 			</div>
 		);

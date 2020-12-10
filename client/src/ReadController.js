@@ -22,7 +22,14 @@ class ReadController extends React.Component {
 		const nbController = MyStringStore.Controller[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p>Controller needed : {nbController && nbController.value}</p>;
+		return (
+			<row>
+				<div class="container-fluid">
+					<div class="col-4">Controller needed :</div> <div class="col-4"></div>
+					<div class="col-4">{nbController && nbController.value}</div>
+				</div>
+			</row>
+		);
 	}
 }
 

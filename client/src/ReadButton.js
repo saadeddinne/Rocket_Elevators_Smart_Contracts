@@ -22,7 +22,12 @@ class ReadButton extends React.Component {
 		const nbButton = MyStringStore.Button[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p>Buttons needed : {nbButton && nbButton.value}</p>;
+		return (
+			<row>
+				<div class="col-6">Buttons needed :</div>{" "}
+				<div class="col-6">{nbButton && nbButton.value}</div>
+			</row>
+		);
 	}
 }
 

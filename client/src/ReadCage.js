@@ -22,7 +22,12 @@ class ReadCage extends React.Component {
 		const nbCage = MyStringStore.Cage[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p> Cages needed : {nbCage && nbCage.value}</p>;
+		return (
+			<row>
+				<div class="col-6">Cages needed :</div>{" "}
+				<div class="col-6">{nbCage && nbCage.value}</div>
+			</row>
+		);
 	}
 }
 

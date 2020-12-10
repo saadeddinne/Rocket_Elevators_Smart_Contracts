@@ -22,7 +22,12 @@ class ReadDisplay extends React.Component {
 		const nbDisplay = MyStringStore.Display[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p>Displays needed : {nbDisplay && nbDisplay.value}</p>;
+		return (
+			<row>
+				<div class="col-6">Displays needed : </div>{" "}
+				<div class="col-6">{nbDisplay && nbDisplay.value}</div>
+			</row>
+		);
 	}
 }
 

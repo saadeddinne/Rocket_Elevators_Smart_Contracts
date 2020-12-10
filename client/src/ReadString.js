@@ -22,7 +22,12 @@ class ReadString extends React.Component {
 		const myString = MyStringStore.myString[this.state.dataKey];
 
 		// if it exists, then we display its value
-		return <p>Service level needed: {myString && myString.value}</p>;
+		return (
+			<row>
+				<div class="col-6">Service level needed: </div>{" "}
+				<div class="col-6">{myString && myString.value}</div>
+			</row>
+		);
 	}
 }
 

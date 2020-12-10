@@ -26,16 +26,29 @@ class App extends Component {
 		});
 
 		// adding scripts
+
+		// adding scripts
 		const script1 = document.createElement("script");
 		const script2 = document.createElement("script");
+		const script3 = document.createElement("script");
+		const script4 = document.createElement("script");
 
 		script1.src =
-			"//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js";
+			"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
 		script1.async = true;
-		script2.src = "//code.jquery.com/jquery-1.11.1.min.js";
+		script2.src = "https://code.jquery.com/jquery-3.3.1.slim.min.js";
 		script2.async = true;
+		script3.src =
+			"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js";
+		script3.async = true;
+		script4.src =
+			"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js";
+		script4.async = true;
+
 		document.body.appendChild(script1);
 		document.body.appendChild(script2);
+		document.body.appendChild(script3);
+		document.body.appendChild(script4);
 	}
 
 	componentWillUnmount() {
@@ -45,64 +58,117 @@ class App extends Component {
 	render() {
 		if (this.state.loading) return "Loading Drizzle...";
 		return (
-			<div className="App">
-				<div className="row">
-					<div className="col-md-12">
-						<div className="panel-group" id="accordion">
-							<div className="panel panel-default">
-								<div className="panel-heading">
-									<h4 className="panel-title">
-										<a
-											data-toggle="collapse"
-											data-parent="#accordion"
-											href="#collapseOne"
-											><span className="glyphicon glyphicon-file"> </span>NEW ORDER</a
+			<body>
+				<nav class="navbar navbar-expand-sm bg-dark navbar-dark lg">
+					<a class="navbar-brand" href="#">
+						<h3>ROCKET ELEVATORS</h3>
+					</a>
+				</nav>
+				<div class="container">
+					<div class="page-header">
+						<h1>POST OFFICE</h1>
+					</div>
+					<div class="mb-5">
+						<h4>
+							When a lead is processed and is converted into an order, it is
+							sent to the project office to formalize and start the execution of
+							the order.
+						</h4>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div className="App">
+						<div className="row">
+							<div className="col-md-12">
+								<div className="panel-group" id="accordion">
+									<div className="panel panel-default">
+										<div className="panel-heading">
+											<h4 className="panel-title">
+												<a
+													data-toggle="collapse"
+													data-parent="#accordion"
+													href="#collapseOne"
+												>
+													<div class="text-primary">NEW ORDER</div>
+												</a>
+											</h4>
+										</div>
+
+										<div
+											id="collapseOne"
+											className="panel-collapse collapse in"
 										>
-									</h4>
-								</div>
-								<div id="collapseOne" className="panel-collapse collapse in">
-									<div className="panel-body">
-										<div className="row">
-											<div className="col-md-12">
-												<div className="form-group">
-													<SetString drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+											<div className="panel-body">
+												<div className="row">
+													<div className="col-md-2"></div>
+													<div className="col-md-8">
+														<div className="form-group">
+															<SetString
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>
+													</div>
+													<div className="col-md-2"></div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-							<div className="panel panel-default">
-								<div className="panel-heading">
-									<h4 className="panel-title">
-										<a
-											data-toggle="collapse"
-											data-parent="#accordion"
-											href="#collapseTwo"
-											><span className="glyphicon glyphicon-th-list"> </span>DISPLAY ORDER</a>
-									</h4>
-								</div>
-								<div id="collapseTwo" className="panel-collapse collapse">
-								<div className="panel-body">
-										<div className="row">
-											<div className="col-md-12">
-												<div className="form-group">
-													<ReadController drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													<ReadCage drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													<ReadMotor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													<ReadDoor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													<ReadButton drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													<ReadDisplay drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+									<div className="panel panel-default">
+										<div className="panel-heading">
+											<h4 className="panel-title">
+												<a
+													data-toggle="collapse"
+													data-parent="#accordion"
+													href="#collapseTwo"
+												>
+													<div class="text-primary">DISPLAY ORDER</div>
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" className="panel-collapse collapse">
+											<div className="panel-body">
+												<div className="row">
+													<div className="col-md-3"></div>
+													<div className="col-md-6">
+														<div className="form-group">
+															<ReadController
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>
+														<div className="form-group">
+															<ReadCage
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>
+														<div className="form-group">
+															<ReadMotor
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>{" "}
+														<div className="form-group">
+															<ReadDoor
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>
+														<div className="form-group">
+															<ReadButton
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>
+														<div className="form-group">
+															<ReadDisplay
+																drizzle={this.props.drizzle}
+																drizzleState={this.state.drizzleState}
+															/>
+														</div>
+													</div>
+													<div className="col-md-3"></div>
 												</div>
 											</div>
 										</div>
@@ -111,8 +177,8 @@ class App extends Component {
 							</div>
 						</div>
 					</div>
-				</div>	
-			</div>
+				</div>
+			</body>
 		);
 	}
 }

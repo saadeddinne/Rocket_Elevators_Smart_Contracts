@@ -56,8 +56,10 @@ class App extends Component {
 											data-toggle="collapse"
 											data-parent="#accordion"
 											href="#collapseOne"
-											><span className="glyphicon glyphicon-file"> </span>NEW ORDER</a
 										>
+											<span className="glyphicon glyphicon-file"> </span>NEW
+											ORDER
+										</a>
 									</h4>
 								</div>
 								<div id="collapseOne" className="panel-collapse collapse in">
@@ -65,7 +67,10 @@ class App extends Component {
 										<div className="row">
 											<div className="col-md-12">
 												<div className="form-group">
-													<SetString drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<SetString
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 											</div>
 										</div>
@@ -79,30 +84,51 @@ class App extends Component {
 											data-toggle="collapse"
 											data-parent="#accordion"
 											href="#collapseTwo"
-											><span className="glyphicon glyphicon-th-list"> </span>DISPLAY ORDER</a>
+										>
+											<span className="glyphicon glyphicon-th-list"> </span>
+											DISPLAY ORDER
+										</a>
 									</h4>
 								</div>
 								<div id="collapseTwo" className="panel-collapse collapse">
-								<div className="panel-body">
+									<div className="panel-body">
 										<div className="row">
 											<div className="col-md-12">
 												<div className="form-group">
-													<ReadController drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadController
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 												<div className="form-group">
-													<ReadCage drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadCage
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 												<div className="form-group">
-													<ReadMotor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadMotor
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 												<div className="form-group">
-													<ReadDoor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadDoor
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 												<div className="form-group">
-													<ReadButton drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadButton
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 												<div className="form-group">
-													<ReadDisplay drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadDisplay
+														drizzle={this.props.drizzle}
+														drizzleState={this.state.drizzleState}
+													/>
 												</div>
 											</div>
 										</div>
@@ -111,7 +137,7 @@ class App extends Component {
 							</div>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 		);
 	}

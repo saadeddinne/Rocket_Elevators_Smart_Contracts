@@ -1,6 +1,6 @@
 import React from "react";
 
-class ReadAddress extends React.Component {
+class ReadDoor extends React.Component {
   state = { dataKey: null };
 
   componentDidMount() {
@@ -8,7 +8,7 @@ class ReadAddress extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to watch the `myString` method
-    const dataKey = contract.methods["Address"].cacheCall();
+    const dataKey = contract.methods["Door"].cacheCall();
 
     // save the `dataKey` to local component state for later reference
     this.setState({ dataKey });
@@ -19,11 +19,11 @@ class ReadAddress extends React.Component {
     const { MyStringStore } = this.props.drizzleState.contracts;
 
     // using the saved `dataKey`, get the variable we're interested in
-    const nbAddress = MyStringStore.Address[this.state.dataKey];
+    const nbDoor = MyStringStore.Door[this.state.dataKey];
 
     // if it exists, then we display its value
-    return (<p> Cages needed : {nbAddress && nbAddress.value}</p>);
+    return (<p>Doors needed : {nbDoor && nbDoor.value}</p>);
   }
 }
 
-export default ReadAddress;
+export default ReadDoor;

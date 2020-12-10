@@ -1,12 +1,12 @@
 import React from "react";
 
-class SetClient extends React.Component {
-  state = { clientId: null };
+class SetDisplay extends React.Component {
+  state = { displayId: null };
 
-  handleKeyDown = c => {
+  handleKeyDown = f => {
     // if the enter key is pressed, set the value with the string
-    if (c.keyCode === 13) {
-      this.setValue1(c.target.value);
+    if (f.keyCode === 13) {
+      this.setValue1(f.target.value);
     }
   };
 
@@ -15,20 +15,20 @@ class SetClient extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const clientId = contract.methods["clientSet"].cacheSend(value, {
+    const displayId = contract.methods["displaySet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `clientId` for later reference
-    this.setState({ clientId });
+    // save the `displayId` for later reference
+    this.setState({ displayId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `clientId`
-    const txHash = transactionStack[this.state.clientId];
+    // get the transaction hash using our saved `displayId`
+    const txHash = transactionStack[this.state.displayId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -47,4 +47,4 @@ class SetClient extends React.Component {
   }
 }
 
-export default SetClient;
+export default SetDisplay;

@@ -1,12 +1,12 @@
 import React from "react";
 
-class SetFloor extends React.Component {
-  state = { floorId: null };
+class SetMotor extends React.Component {
+  state = { motorId: null };
 
-  handleKeyDown = f => {
+  handleKeyDown = b => {
     // if the enter key is pressed, set the value with the string
-    if (f.keyCode === 13) {
-      this.setValue1(f.target.value);
+    if (b.keyCode === 13) {
+      this.setValue1(b.target.value);
     }
   };
 
@@ -15,20 +15,20 @@ class SetFloor extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const floorId = contract.methods["floorSet"].cacheSend(value, {
+    const motorId = contract.methods["motorSet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `floorId` for later reference
-    this.setState({ floorId });
+    // save the `motorId` for later reference
+    this.setState({ motorId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `floorId`
-    const txHash = transactionStack[this.state.floorId];
+    // get the transaction hash using our saved `motorId`
+    const txHash = transactionStack[this.state.motorId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -47,4 +47,4 @@ class SetFloor extends React.Component {
   }
 }
 
-export default SetFloor;
+export default SetMotor;

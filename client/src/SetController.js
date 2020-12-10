@@ -1,12 +1,12 @@
 import React from "react";
 
-class SetAddress extends React.Component {
-  state = { addressId: null };
+class SetController extends React.Component {
+  state = { controllerId: null };
 
-  handleKeyDown = a => {
+  handleKeyDown = c => {
     // if the enter key is pressed, set the value with the string
-    if (a.keyCode === 13) {
-      this.setValue1(a.target.value);
+    if (c.keyCode === 13) {
+      this.setValue1(c.target.value);
     }
   };
 
@@ -15,20 +15,20 @@ class SetAddress extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const addressId = contract.methods["addressSet"].cacheSend(value, {
+    const controllerId = contract.methods["controllerSet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `addressId` for later reference
-    this.setState({ addressId });
+    // save the `controllerId` for later reference
+    this.setState({ controllerId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `addressId`
-    const txHash = transactionStack[this.state.addressId];
+    // get the transaction hash using our saved `controllerId`
+    const txHash = transactionStack[this.state.controllerId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -47,4 +47,4 @@ class SetAddress extends React.Component {
   }
 }
 
-export default SetAddress;
+export default SetController;

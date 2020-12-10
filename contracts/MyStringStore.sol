@@ -2,39 +2,39 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract MyStringStore {
-  string public Client = "---Controllers needed---";
-  string public Address = "---Cages needed---";
-  string public nbBattery = "---Motors needed---";
+  string public Controller = "---Controllers needed---";
+  string public Cage = "---Cages needed---";
+  string public Motor = "---Motors needed---";
   // string public myString = "---Service Level---";
-  string public nbColumn = "---Doors needed---";
-  string public nbElevator = "---Buttons needed---";
-  string public nbFloor = "---Displays needed---";
+  string public Door = "---Doors needed---";
+  string public Button = "---Buttons needed---";
+  string public Display = "---Displays needed---";
 
   // function set(string memory x) public {
   //   myString = x;
   // }
 
-  function batterySet(string memory b) public {
-    nbBattery = b;
+  function motorSet(string memory b) public {
+    Motor = b;
   }
 
-  function addressSet(string memory a) public {
-    Address = a;
+  function cageSet(string memory a) public {
+    Cage = a;
   }
 
-  function clientSet(string memory c) public {
-    Client = c;
+  function controllerSet(string memory c) public {
+    Controller = c;
   }
 
-  function columnSet(string memory d) public {
-    nbColumn = d;
+  function doorSet(string memory d) public {
+    Door = d;
   }
 
-  function elevatorSet(string memory e) public {
-    nbElevator = e;
+  function buttonSet(string memory e) public {
+    Button = e;
   }
 
-  function floorSet(string memory f) public {
-    nbFloor = f;
+  function displaySet(string memory f) public {
+    Display = f;
   }
 }

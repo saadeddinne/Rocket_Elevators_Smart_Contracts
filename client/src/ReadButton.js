@@ -1,6 +1,6 @@
 import React from "react";
 
-class ReadBattery extends React.Component {
+class ReadButton extends React.Component {
   state = { dataKey: null };
 
   componentDidMount() {
@@ -8,7 +8,7 @@ class ReadBattery extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to watch the `myString` method
-    const dataKey = contract.methods["nbBattery"].cacheCall();
+    const dataKey = contract.methods["Button"].cacheCall();
 
     // save the `dataKey` to local component state for later reference
     this.setState({ dataKey });
@@ -19,11 +19,11 @@ class ReadBattery extends React.Component {
     const { MyStringStore } = this.props.drizzleState.contracts;
 
     // using the saved `dataKey`, get the variable we're interested in
-    const nbBattery = MyStringStore.nbBattery[this.state.dataKey];
+    const nbButton = MyStringStore.Button[this.state.dataKey];
 
     // if it exists, then we display its value
-    return (<p>Motors needed : {nbBattery && nbBattery.value}</p>);
+    return (<p>Buttons needed : {nbButton && nbButton.value}</p>);
   }
 }
 
-export default ReadBattery;
+export default ReadButton;

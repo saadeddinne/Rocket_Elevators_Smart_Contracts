@@ -1,12 +1,12 @@
 import React from "react";
 
-class SetBattery extends React.Component {
-  state = { batteryId: null };
+class SetDoor extends React.Component {
+  state = { doorId: null };
 
-  handleKeyDown = b => {
+  handleKeyDown = d => {
     // if the enter key is pressed, set the value with the string
-    if (b.keyCode === 13) {
-      this.setValue1(b.target.value);
+    if (d.keyCode === 13) {
+      this.setValue1(d.target.value);
     }
   };
 
@@ -15,20 +15,20 @@ class SetBattery extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const batteryId = contract.methods["batterySet"].cacheSend(value, {
+    const doorId = contract.methods["doorSet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `batteryId` for later reference
-    this.setState({ batteryId });
+    // save the `doorId` for later reference
+    this.setState({ doorId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `batteryId`
-    const txHash = transactionStack[this.state.batteryId];
+    // get the transaction hash using our saved `doorId`
+    const txHash = transactionStack[this.state.doorId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -47,4 +47,4 @@ class SetBattery extends React.Component {
   }
 }
 
-export default SetBattery;
+export default SetDoor;

@@ -66,7 +66,7 @@ class App extends Component {
 				</nav>
 				<div class="container">
 					<div class="page-header">
-						<h1>POST OFFICE</h1>
+						<h1>PROJECT OFFICE</h1>
 					</div>
 					<div class="mb-5">
 						<h4>

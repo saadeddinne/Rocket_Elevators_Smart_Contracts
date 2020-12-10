@@ -1,7 +1,7 @@
 import React from "react";
 
-class SetBattery extends React.Component {
-  state = { batteryId: null };
+class SetButton extends React.Component {
+  state = { buttonId: null };
 
   handleKeyDown = e => {
     // if the enter key is pressed, set the value with the string
@@ -15,20 +15,20 @@ class SetBattery extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const elevatorId = contract.methods["elevatorSet"].cacheSend(value, {
+    const buttonId = contract.methods["buttonSet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `elevatorId` for later reference
-    this.setState({ elevatorId });
+    // save the `buttonId` for later reference
+    this.setState({ buttonId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `elevatorId`
-    const txHash = transactionStack[this.state.elevatorId];
+    // get the transaction hash using our saved `buttonId`
+    const txHash = transactionStack[this.state.buttonId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -47,4 +47,4 @@ class SetBattery extends React.Component {
   }
 }
 
-export default SetBattery;
+export default SetButton;

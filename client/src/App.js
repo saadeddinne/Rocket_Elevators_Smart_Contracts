@@ -1,19 +1,17 @@
 import React, { Component } from "react"; //different
 import "./App.css";
-import ReadBattery from "./ReadBattery";
-import ReadString from "./ReadString";
-import SetBattery from "./SetBattery";
-import SetString from "./SetString";
-import ReadAddress from "./ReadAddress";
-import SetAddress from "./SetAddress";
-import ReadClient from "./ReadClient";
-import SetClient from "./SetClient";
-import ReadColumn from "./ReadColumn";
-import SetColumn from "./SetColumn";
-import ReadElevator from "./ReadElevator";
-import SetElevator from "./SetElevator";
-import ReadFloor from "./ReadFloor";
-import SetFloor from "./SetFloor";
+import ReadMotor from "./ReadMotor";
+import SetMotor from "./SetMotor";
+import ReadCage from "./ReadCage";
+import SetCage from "./SetCage";
+import ReadController from "./ReadController";
+import SetController from "./SetController";
+import ReadDoor from "./ReadDoor";
+import SetDoor from "./SetDoor";
+import ReadButton from "./ReadButton";
+import SetButton from "./SetButton";
+import ReadDisplay from "./ReadDisplay";
+import SetDisplay from "./SetDisplay";
 
 class App extends Component {
 	state = { loading: true, drizzleState: null };
@@ -72,22 +70,22 @@ class App extends Component {
 										<div className="row">
 											<div className="col-md-12">
 												<div className="form-group">
-													Controller needed : <SetClient drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													Controller needed : <SetController drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													Cages needed : <SetAddress drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													Cages needed : <SetCage drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													Motors needed : <SetBattery drizzle={this.props.drizzle}	drizzleState={this.state.drizzleState}/>
+													Motors needed : <SetMotor drizzle={this.props.drizzle}	drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													Doors needed : <SetColumn drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													Doors needed : <SetDoor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													Buttons needed : <SetElevator drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													Buttons needed : <SetButton drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													Displays needed : <SetFloor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													Displays needed : <SetDisplay drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 											</div>
 										</div>
@@ -109,22 +107,22 @@ class App extends Component {
 										<div className="row">
 											<div className="col-md-12">
 												<div className="form-group">
-													<ReadClient drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadController drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													<ReadAddress drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadCage drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													<ReadBattery drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadMotor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													<ReadColumn drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadDoor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													<ReadElevator drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadButton drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 												<div className="form-group">
-													<ReadFloor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<ReadDisplay drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 											</div>
 										</div>

@@ -1,12 +1,12 @@
 import React from "react";
 
-class SetColumn extends React.Component {
-  state = { columnId: null };
+class SetCage extends React.Component {
+  state = { addressId: null };
 
-  handleKeyDown = d => {
+  handleKeyDown = a => {
     // if the enter key is pressed, set the value with the string
-    if (d.keyCode === 13) {
-      this.setValue1(d.target.value);
+    if (a.keyCode === 13) {
+      this.setValue1(a.target.value);
     }
   };
 
@@ -15,20 +15,20 @@ class SetColumn extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to call the `set` method with `value`
-    const columnId = contract.methods["columnSet"].cacheSend(value, {
+    const addressId = contract.methods["cageSet"].cacheSend(value, {
       from: drizzleState.accounts[0]
     });
 
-    // save the `columnId` for later reference
-    this.setState({ columnId });
+    // save the `addressId` for later reference
+    this.setState({ addressId });
   };
 
   getTxStatus = () => {
     // get the transaction states from the drizzle state
     const { transactions, transactionStack } = this.props.drizzleState;
 
-    // get the transaction hash using our saved `columnId`
-    const txHash = transactionStack[this.state.columnId];
+    // get the transaction hash using our saved `addressId`
+    const txHash = transactionStack[this.state.addressId];
 
     // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
@@ -47,4 +47,4 @@ class SetColumn extends React.Component {
   }
 }
 
-export default SetColumn;
+export default SetCage;

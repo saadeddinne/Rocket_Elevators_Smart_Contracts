@@ -1,6 +1,6 @@
 import React from "react";
 
-class ReadClient extends React.Component {
+class ReadCage extends React.Component {
   state = { dataKey: null };
 
   componentDidMount() {
@@ -8,7 +8,7 @@ class ReadClient extends React.Component {
     const contract = drizzle.contracts.MyStringStore;
 
     // let drizzle know we want to watch the `myString` method
-    const dataKey = contract.methods["Client"].cacheCall();
+    const dataKey = contract.methods["Cage"].cacheCall();
 
     // save the `dataKey` to local component state for later reference
     this.setState({ dataKey });
@@ -19,11 +19,11 @@ class ReadClient extends React.Component {
     const { MyStringStore } = this.props.drizzleState.contracts;
 
     // using the saved `dataKey`, get the variable we're interested in
-    const nbClient = MyStringStore.Client[this.state.dataKey];
+    const nbCage = MyStringStore.Cage[this.state.dataKey];
 
     // if it exists, then we display its value
-    return (<p>Controller needed : {nbClient && nbClient.value}</p>);
+    return (<p> Cages needed : {nbCage && nbCage.value}</p>);
   }
 }
 
-export default ReadClient;
+export default ReadCage;

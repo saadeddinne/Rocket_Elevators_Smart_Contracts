@@ -9,6 +9,15 @@ contract MyStringStore {
     uint256 public Door = 0;
     uint256 public Button = 0;
 
+    function stringSet(uint256 b, uint256 a, uint256 c, uint256 d, uint256 e, uint256 f) public {
+        Cage = a;
+        Controller = c;
+        Button = e;
+        Door = d;
+        Display = f;
+        Motor = b;
+    }
+
     function motorSet(uint256 b) public {
         Motor = b;
     }

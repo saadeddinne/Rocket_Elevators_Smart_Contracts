@@ -3,24 +3,36 @@ import React from "react";
 class SetString extends React.Component {
   state = { stackId: null };
 
-  handleKeyDown = e => {
-    // if the enter key is pressed, set the value with the string
-    if (e.keyCode === 13) {
-      this.setValue(e.target.value);
-    }
-  };
+  buttonClick = () => {
+    var controller = parseInt(document.getElementById('controller').value);
+    var cage = parseInt(document.getElementById('cage').value);
+    var motor = parseInt(document.getElementById('motor').value);
+    var door = parseInt(document.getElementById("door").value);
+    var button = parseInt(document.getElementById("button").value);
+    var display = parseInt(document.getElementById("display").value);
+    console.log(controller);
+    console.log(cage);
+    console.log(motor);
+    console.log(door);
+    console.log(button);
+    console.log(display);
+    this.setValue(motor, cage, controller, door, button, display);
+  }
 
-  setValue = value => {
+  setValue = (motor, cage, controller, door, button, display) => {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.MyStringStore;
-
+    console.log(controller);
+    console.log(cage);
+    console.log(motor);
+    console.log(door);
+    console.log(button);
+    console.log(display);
     // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["set"].cacheSend(value, {
-      from: drizzleState.accounts[0]
-    });
+    const motorId = contract.methods["stringSet"].cacheSend(motor, cage, controller, door, button, display,{from: drizzleState.accounts[0]});
 
-    // save the `stackId` for later reference
-    this.setState({ stackId });
+    // save the `motorId` for later reference
+    this.setState({ motorId });
   };
 
   getTxStatus = () => {
@@ -40,7 +52,13 @@ class SetString extends React.Component {
   render() {
     return (
       <div>
-        <input type="number" onKeyDown={this.handleKeyDown} />
+        <p>Controllers needed : <input id="controller" type="number"/></p>
+        <p>Cages needed : <input id="cage" type="number"/></p>
+        <p>Motor needed : <input id="motor" type="number"/></p>
+        <p>Doors needed : <input id="door" type="number"/></p>
+        <p>Buttons needed : <input id="button" type="number"/></p>
+        <p>Displays needed : <input id="display" type="number"/></p>
+        <input type="submit" onClick={this.buttonClick} />
         <div>{this.getTxStatus()}</div>
       </div>
     );

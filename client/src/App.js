@@ -1,17 +1,12 @@
 import React, { Component } from "react"; //different
 import "./App.css";
 import ReadMotor from "./ReadMotor";
-import SetMotor from "./SetMotor";
 import ReadCage from "./ReadCage";
-import SetCage from "./SetCage";
 import ReadController from "./ReadController";
-import SetController from "./SetController";
 import ReadDoor from "./ReadDoor";
-import SetDoor from "./SetDoor";
 import ReadButton from "./ReadButton";
-import SetButton from "./SetButton";
 import ReadDisplay from "./ReadDisplay";
-import SetDisplay from "./SetDisplay";
+import SetString from "./SetString";
 
 class App extends Component {
 	state = { loading: true, drizzleState: null };
@@ -70,22 +65,7 @@ class App extends Component {
 										<div className="row">
 											<div className="col-md-12">
 												<div className="form-group">
-													Controller needed : <SetController drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													Cages needed : <SetCage drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													Motors needed : <SetMotor drizzle={this.props.drizzle}	drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													Doors needed : <SetDoor drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													Buttons needed : <SetButton drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
-												</div>
-												<div className="form-group">
-													Displays needed : <SetDisplay drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
+													<SetString drizzle={this.props.drizzle} drizzleState={this.state.drizzleState}/>
 												</div>
 											</div>
 										</div>

@@ -24,6 +24,20 @@ contract MyStringStore {
         Display = f;
         Motor = b;
     }
+    
+    function getData() public view returns(uint[6] memory){
+
+        uint[6] memory data = [
+            Controller,
+            Cage,
+            Motor,
+            Door,
+            Button,
+            Display
+        ];
+
+        return data;
+    }
 
     function motorSet(uint256 b) public {
         Motor = b;

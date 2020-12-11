@@ -5,7 +5,7 @@ class ReadMotor extends React.Component {
 
 	componentDidMount() {
 		const { drizzle } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 
 		// let drizzle know we want to watch the `myString` method
 		const dataKey = contract.methods["Motor"].cacheCall();
@@ -16,10 +16,10 @@ class ReadMotor extends React.Component {
 
 	render() {
 		// get the contract state from drizzleState
-		const { MyStringStore } = this.props.drizzleState.contracts;
+		const { ProjectOffice } = this.props.drizzleState.contracts;
 
 		// using the saved `dataKey`, get the variable we're interested in
-		const nbMotor = MyStringStore.Motor[this.state.dataKey];
+		const nbMotor = ProjectOffice.Motor[this.state.dataKey];
 
 		// if it exists, then we display its value
 		return (

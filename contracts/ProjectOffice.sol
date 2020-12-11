@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.0;
 
-contract MyStringStore {
+contract ProjectOffice {
     uint256 public Display = 0;
     uint256 public Controller = 0;
     uint256 public Cage = 0;

@@ -1,5 +1,5 @@
-const MyStringStore = artifacts.require("MyStringStore");
+const ProjectOffice = artifacts.require("ProjectOffice");
 
 module.exports = function (deployer) {
-	deployer.deploy(MyStringStore);
+	deployer.deploy(ProjectOffice);
 };

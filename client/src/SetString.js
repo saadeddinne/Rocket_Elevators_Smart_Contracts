@@ -21,7 +21,7 @@ class SetString extends React.Component {
 
 	setValue = (motor, cage, controller, door, button, display) => {
 		const { drizzle, drizzleState } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 		console.log(controller);
 		console.log(cage);
 		console.log(motor);

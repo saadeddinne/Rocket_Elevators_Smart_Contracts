@@ -50,7 +50,7 @@ class App extends Component {
 		document.body.appendChild(script3);
 		document.body.appendChild(script4);
 	}
-
+	// destroy the object !
 	componentWillUnmount() {
 		this.unsubscribe();
 	}

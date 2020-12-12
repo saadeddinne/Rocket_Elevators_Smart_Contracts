@@ -9,10 +9,10 @@ class SetController extends React.Component {
 			this.setValue1(c.target.value);
 		}
 	};
-
+	// Drizzle
 	setValue1 = (value) => {
 		const { drizzle, drizzleState } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 
 		// let drizzle know we want to call the `set` method with `value`
 		const controllerId = contract.methods["controllerSet"].cacheSend(value, {

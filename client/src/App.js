@@ -50,7 +50,7 @@ class App extends Component {
 		document.body.appendChild(script3);
 		document.body.appendChild(script4);
 	}
-
+	// destroy the object !
 	componentWillUnmount() {
 		this.unsubscribe();
 	}
@@ -60,20 +60,11 @@ class App extends Component {
 		return (
 			<body>
 				<nav class="navbar navbar-expand-sm bg-dark navbar-dark lg">
-					<a class="navbar-brand" href="#">
-						<h1 class="display-3">ROCKET ELEVATORS</h1>
-					</a>
+					<h1 class="display-3">ROCKET ELEVATORS</h1>
 				</nav>
 				<div class="container">
 					<div class="page-header">
 						<h1 class="display-2">PROJECT OFFICE</h1>
-					</div>
-					<div class="mb-5">
-						<h4>
-							When a lead is processed and is converted into an order, it is
-							sent to the project office to formalize and start the execution of
-							the order.
-						</h4>
 					</div>
 				</div>
 				<div class="container-fluid">

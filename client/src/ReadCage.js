@@ -5,7 +5,7 @@ class ReadCage extends React.Component {
 
 	componentDidMount() {
 		const { drizzle } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 
 		// let drizzle know we want to watch the `myString` method
 		const dataKey = contract.methods["Cage"].cacheCall();
@@ -16,10 +16,10 @@ class ReadCage extends React.Component {
 
 	render() {
 		// get the contract state from drizzleState
-		const { MyStringStore } = this.props.drizzleState.contracts;
+		const { ProjectOffice } = this.props.drizzleState.contracts;
 
 		// using the saved `dataKey`, get the variable we're interested in
-		const nbCage = MyStringStore.Cage[this.state.dataKey];
+		const nbCage = ProjectOffice.Cage[this.state.dataKey];
 
 		// if it exists, then we display its value
 		return (

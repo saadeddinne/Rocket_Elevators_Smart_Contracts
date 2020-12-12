@@ -12,7 +12,7 @@ class SetButton extends React.Component {
 
 	setValue1 = (value) => {
 		const { drizzle, drizzleState } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 
 		// let drizzle know we want to call the `set` method with `value`
 		const buttonId = contract.methods["buttonSet"].cacheSend(value, {

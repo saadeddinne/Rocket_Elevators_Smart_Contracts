@@ -3,6 +3,7 @@ import React from "react";
 class SetString extends React.Component {
 	state = { stackId: null };
 
+	// To handle the event of the click (button submit)
 	buttonClick = () => {
 		var controller = parseInt(document.getElementById("controller").value);
 		var cage = parseInt(document.getElementById("cage").value);
@@ -19,9 +20,10 @@ class SetString extends React.Component {
 		this.setValue(motor, cage, controller, door, button, display);
 	};
 
+	// get the value of the order
 	setValue = (motor, cage, controller, door, button, display) => {
 		const { drizzle, drizzleState } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 		console.log(controller);
 		console.log(cage);
 		console.log(motor);
@@ -58,7 +60,7 @@ class SetString extends React.Component {
 			transactions[txHash] && transactions[txHash].status
 		}`;
 	};
-
+	// render HTML to set and get order !!
 	render() {
 		return (
 			<div class="container">
@@ -144,5 +146,5 @@ class SetString extends React.Component {
 		);
 	}
 }
-
+// export the methode
 export default SetString;

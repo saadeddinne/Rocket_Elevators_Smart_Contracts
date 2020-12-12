@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.0;
 
-contract MyStringStore {
+contract ProjectOffice {
+    // project Office contract variables to define the order
     uint256 public Display = 0;
     uint256 public Controller = 0;
     uint256 public Cage = 0;
@@ -9,6 +10,7 @@ contract MyStringStore {
     uint256 public Door = 0;
     uint256 public Button = 0;
 
+    // to initialize the contract !!
     function stringSet(
         uint256 b,
         uint256 a,
@@ -25,6 +27,23 @@ contract MyStringStore {
         Motor = b;
     }
 
+    // to get the contract data !!
+    // the view consume less gas and much more cheep !!
+    //  the return value is a public array with the data
+    function getData() public view returns (uint256[6] memory) {
+        uint256[6] memory data = [
+            Controller,
+            Cage,
+            Motor,
+            Door,
+            Button,
+            Display
+        ];
+
+        return data;
+    }
+
+    //  the first versions we keep it in case we fail to plug in with other nodes to detect the problem
     function motorSet(uint256 b) public {
         Motor = b;
     }

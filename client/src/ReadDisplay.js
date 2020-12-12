@@ -5,7 +5,7 @@ class ReadDisplay extends React.Component {
 
 	componentDidMount() {
 		const { drizzle } = this.props;
-		const contract = drizzle.contracts.MyStringStore;
+		const contract = drizzle.contracts.ProjectOffice;
 
 		// let drizzle know we want to watch the `myString` method
 		const dataKey = contract.methods["Display"].cacheCall();
@@ -16,10 +16,10 @@ class ReadDisplay extends React.Component {
 
 	render() {
 		// get the contract state from drizzleState
-		const { MyStringStore } = this.props.drizzleState.contracts;
+		const { ProjectOffice } = this.props.drizzleState.contracts;
 
 		// using the saved `dataKey`, get the variable we're interested in
-		const nbDisplay = MyStringStore.Display[this.state.dataKey];
+		const nbDisplay = ProjectOffice.Display[this.state.dataKey];
 
 		// if it exists, then we display its value
 		return (

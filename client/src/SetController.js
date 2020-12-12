@@ -9,7 +9,7 @@ class SetController extends React.Component {
 			this.setValue1(c.target.value);
 		}
 	};
-
+	// Drizzle
 	setValue1 = (value) => {
 		const { drizzle, drizzleState } = this.props;
 		const contract = drizzle.contracts.ProjectOffice;
